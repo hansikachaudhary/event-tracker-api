@@ -1,4 +1,4 @@
-# 📌 Event Tracker API (Keploy Session 2 - Task 1: API Testing)
+# 📌 # 📌 Event Tracker API (Keploy Session 3 Task: Writing Tests)
 
 A backend API server built using Node.js, Express.js, and MongoDB Atlas. It supports full CRUD operations on events.  
 This task focuses on writing **unit**, **integration**, and **API tests** to ensure high reliability and code coverage.
