@@ -1,17 +1,23 @@
+# 📌 Event Tracker API (Keploy Session 2 - Task 1: API Testing)
 
-# 📌 Event Tracker API (Keploy Session 2 Task)
-
-A backend API server built using Node.js, Express.js, and MongoDB Atlas. It allows full CRUD operations on events — part of Keploy Session 2 Task 1.
+A backend API server built using Node.js, Express.js, and MongoDB Atlas. It supports full CRUD operations on events.  
+This task focuses on writing **unit**, **integration**, and **API tests** to ensure high reliability and code coverage.
 
 ---
 
 ## 🔧 Tech Stack
+
 - **Node.js**
 - **Express.js**
 - **MongoDB Atlas**
-- **Thunder Client** (for API testing)
+- **Thunder Client** – manual API testing
+- **Jest** – testing framework
+- **Supertest** – HTTP assertions
+- **Mongoose** – ODM for MongoDB
 
 ---
+
+
 
 ## 📁 Folder Structure
 
@@ -20,10 +26,20 @@ event-tracker-api/
 │ └── Event.js
 ├── routes/
 │ └── eventRoutes.js
+├── tests/
+│ ├── unit/
+│ │ └── capitalize.test.js
+│ ├── integration/
+│ │ └── eventModel.test.js
+│ └── api/
+│ └── eventApi.test.js
+├── utils/
+│ └── capitalize.js
 ├── server.js
 ├── .env
+├── .gitignore
 ├── package.json
-└── .gitignore
+└── README.md
 
 
 ---
@@ -50,15 +66,23 @@ event-tracker-api/
    
    npm install
    
-3.Create .env file and add:
+3.  Create .env file and add:
 
-   MONGO_URI=your_mongodb_uri
-   PORT=5000
+    PORT=5000
+    MONGO_URI=your_prod_mongodb_uri
+    MONGODB_URI_TEST=your_test_mongodb_uri
+
    
 4.   Start the server:
    
        npm start
- 
+
+5.   Run Tests
+    
+     npm test
+
+
+
    
 # 📌 Status
      ✅API server with CRUD routes
@@ -69,8 +93,25 @@ event-tracker-api/
 
      ✅GitHub setup with .gitignore & README
 
-     
-  👩‍💻 Author
+
+🧪 Tests
+
+     | Type          | File                 | Status    |
+| ------------- | -------------------- | --------- |
+| ✅ Unit Test   | `capitalize.test.js` | ✔️ Passed |
+| ✅ Integration | `eventModel.test.js` | ✔️ Passed |
+| ✅ API Test    | `eventApi.test.js`   | ✔️ Passed |
+
+
+Frameworks Used: Jest, Supertest
+Test Coverage: 86.04% ✅
+
+## 📸 Coverage Screenshot
+
+![Test Coverage](./coverage.png.jpg)
+
+## 👩‍💻 Author
+  
 **Hansika Chaudhary**  
 [LinkedIn](https://www.linkedin.com/in/hansika-chaudhary-243164253/)  
 [GitHub](hansikachaudhary)
