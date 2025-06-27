@@ -1,8 +1,32 @@
-const express = require('express');
+const express = require('express'); 
 const router = express.Router();
 const Event = require('../models/Event');
 
-// CREATE Event
+/**
+ * @swagger
+ * /api/events:
+ *   post:
+ *     summary: Create a new event
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               date:
+ *                 type: string
+ *                 format: date
+ *               description:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Event created successfully
+ *       400:
+ *         description: Invalid input
+ */
 router.post('/', async (req, res) => {
   try {
     const event = new Event(req.body);
@@ -14,7 +38,21 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET All Events
+/**
+ * @swagger
+ * /api/events:
+ *   get:
+ *     summary: Get all events
+ *     responses:
+ *       200:
+ *         description: List of events
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Event'
+ */
 router.get('/', async (req, res) => {
   try {
     const events = await Event.find();
@@ -25,7 +63,23 @@ router.get('/', async (req, res) => {
   }
 });
 
-// DELETE Event
+/**
+ * @swagger
+ * /api/events/{id}:
+ *   delete:
+ *     summary: Delete an event by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Event deleted successfully
+ *       500:
+ *         description: Server error
+ */
 router.delete('/:id', async (req, res) => {
   try {
     await Event.findByIdAndDelete(req.params.id);
