@@ -24,19 +24,14 @@ jobs:
 
       - name: ⚡ Start Server in Background
         run: |
-          nohup npm start & sleep 20
+          nohup npm start & sleep 15
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
 
       - name: 🧪 Run Keploy Tests
         run: |
-          curl --fail --show-error --location "https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64" --output keploy
-          
-          if [ ! -f keploy ]; then
-            echo "❌ Keploy binary not downloaded!"
-            exit 1
-          fi
-
+          curl --fail --show-error --location "https://github.com/keploy/keploy/releases/download/v2.6.14/keploy_linux_amd64.tar.gz" --output keploy.tar.gz
+          tar -xzf keploy.tar.gz
           chmod +x ./keploy
           ./keploy version
           ./keploy test --path ./ --delay 10
