@@ -24,10 +24,12 @@ jobs:
 
       - name: ⚡ Start Server in Background
         run: |
-          nohup npm start & sleep 15
+          nohup npm start & sleep 20
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
 
       - name: 🧪 Run Keploy Tests
         run: |
-          curl --silent --location "https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64" --output keploy
+          curl --fail --silent --location "https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64" --output keploy
           chmod +x ./keploy
           ./keploy test --path ./ --delay 10
