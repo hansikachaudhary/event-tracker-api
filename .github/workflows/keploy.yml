@@ -10,17 +10,6 @@ jobs:
   run-keploy-tests:
     runs-on: ubuntu-latest
 
-    services:
-      mongodb:
-        image: mongo:6.0
-        ports:
-          - 27017:27017
-        options: >-
-          --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'" 
-          --health-interval=10s 
-          --health-timeout=5s 
-          --health-retries=5
-
     steps:
       - name: ⬇️ Checkout Code
         uses: actions/checkout@v3
@@ -33,10 +22,9 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
-      - name: ⚡ Run Server in Background
+      - name: ⚡ Start Server in Background
         run: |
-          nohup npm start &
-          sleep 15   # ⏳ Increased to give server enough time
+          nohup npm start & sleep 15
 
       - name: 🧪 Run Keploy Tests
         run: |
