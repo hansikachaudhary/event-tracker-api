@@ -1,4 +1,28 @@
+# 📌 Event Tracker API (Keploy Session 4 Task: API Testing with AI & CI/CD Integration)
+
+![Keploy API Tests](https://github.com/hansikachaudhary/event-tracker-api/actions/workflows/keploy.yml/badge.svg)
+
+In this session, I integrated Keploy to auto-generate tests and set up CI/CD with GitHub Actions.
+
+### ✅ Highlights:
+- 📄 OpenAPI Schema generated via Swagger.
+- 🤖 Keploy used for AI-powered test generation.
+- ⚙️ GitHub Actions used for continuous integration.
+- 🌐 MongoDB Atlas as cloud database.
+
+![Keploy API Tests](https://github.com/hansikachaudhary/event-tracker-api/actions/workflows/keploy.yml/badge.svg)
+
+🔗 [Workflow File](https://github.com/hansikachaudhary/event-tracker-api/blob/main/.github/workflows/keploy.yml)
+
+📸 Test Dashboard:
+
+![Keploy Dashboard](./keploy-report.png)
+✍️ [Read My Blog on API Testing](https://dev.to/hansika_chaudhary_85d861b/how-i-automated-api-testing-and-cicd-integration-with-keploy-1hph)
+
+
 # 📌 Event Tracker API (Keploy Session 3 Task: Writing Tests)
+
+
 
 
 A backend API server built using Node.js, Express.js, and MongoDB Atlas. It supports full CRUD operations on events.  
