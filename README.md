@@ -16,7 +16,7 @@ In this session, I integrated Keploy to auto-generate tests and set up CI/CD wit
 
 📸 Test Dashboard:
 
-![Keploy Dashboard](./keploy-report.png)
+![Keploy Dashboard](https://app.keploy.io/api-testing/test-suites?appId=5e86b901-c3fb-414c-baed-79dc4515a2fb)
 ✍️ [Read My Blog on API Testing](https://dev.to/hansika_chaudhary_85d861b/how-i-automated-api-testing-and-cicd-integration-with-keploy-1hph)
 
 
