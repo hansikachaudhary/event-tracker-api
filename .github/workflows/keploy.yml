@@ -12,7 +12,7 @@ jobs:
 
     services:
       mongodb:
-        image: mongo:6.0  # ✅ Updated from mongo:4.4
+        image: mongo:6.0
         ports:
           - 27017:27017
         options: >-
@@ -35,10 +35,11 @@ jobs:
 
       - name: ⚡ Run Server in Background
         run: |
-          nohup npm start & sleep 5
+          nohup npm start &
+          sleep 15   # ⏳ Increased to give server enough time
 
       - name: 🧪 Run Keploy Tests
         run: |
           curl --silent --location "https://github.com/keploy/keploy/releases/latest/download/keploy-linux-amd64" --output keploy
-          chmod +x keploy
+          chmod +x ./keploy
           ./keploy test --path ./ --delay 10
