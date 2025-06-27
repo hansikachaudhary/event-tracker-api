@@ -33,5 +33,5 @@ jobs:
           curl --fail --show-error --location "https://github.com/keploy/keploy/releases/download/v2.6.14/keploy_linux_amd64.tar.gz" --output keploy.tar.gz
           tar -xzf keploy.tar.gz
           chmod +x ./keploy
-          ./keploy version
+          
           ./keploy test --path ./ --delay 10
